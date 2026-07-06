@@ -1,0 +1,2 @@
+#!/bin/nushell
+cobalt serve
