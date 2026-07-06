@@ -8,7 +8,6 @@ ignore:
   - "serve"
   - "README.md"
   - "LICENSE"
-  - "_raw.data/*"
 destination: _site
 
 site:
