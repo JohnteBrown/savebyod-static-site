@@ -8,7 +8,7 @@ title: Help Us Save BYOD!!
   <h2>Help restore a bring-your-own-device policy at MCCTC.</h2>
   <p>We believe students should be trusted to use the same digital tools they already rely on outside the classroom to learn inside it.</p>
   <div class="actions">
-    <a class="button primary" href="/petition/">Sign the petition</a>
+    <a class="button primary" href="/petition/">Join the campaign!</a>
     <a class="button secondary" href="/about/">Learn why it matters</a>
   </div>
 </section>
