@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="../sass/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/">{{ site.title }}</a>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="/petition/">Petition</a>
+          <a href="/about/">About</a>
+          <a href="/posts/">Updates</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        {% if page.title %}
+          <h1>{{ page.title }}</h1>
+        {% endif %}
+        {{ page.content }}
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>MCCTC students and families deserve a modern learning environment.</p>
+      </div>
+    </footer>
+  </body>
+</html>
