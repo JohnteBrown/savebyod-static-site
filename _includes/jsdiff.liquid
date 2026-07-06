@@ -1,0 +1,109 @@
+{% assign recent_posts = collections.posts.pages | sort: "published_date" | reverse %}
+
+{% if recent_posts.size > 1 %}
+  {% assign newest = recent_posts[0] %}
+  {% assign previous = recent_posts[1] %}
+
+  <div class="change-widget">
+    <h3>Recent changes</h3>
+    <div id="site-change-patch" class="patch"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js"></script>
+<style>
+    .change-widget {
+  max-width: 900px;        /* 👈 wider */
+  width: 100%;
+  margin: 24px auto;       /* 👈 centers it */
+  border-radius: 10px;
+  background: #ffffff;     /* 👈 GitHub-like white */
+  border: 1px solid #d0d7de;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+/* header */
+.change-widget h3 {
+  margin: 0;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #d0d7de;
+  background: #f6f8fa;
+}
+
+/* diff container */
+.patch {
+  padding: 12px;
+  max-height: 500px;     /* 👈 taller */
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+}
+
+/* diff rows */
+.diff-line {
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* GitHub-style colors */
+.added {
+  background: #e6ffec;
+  color: #1a7f37;
+}
+
+.removed {
+  background: #ffebe9;
+  color: #cf222e;
+}
+
+.unchanged {
+  color: #57606a;
+}
+</style>
+
+  <script>
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function renderDiff(oldText, newText) {
+      var diff = Diff.diffLines(oldText, newText);
+      var html = "";
+
+      diff.forEach(function(part) {
+        var lines = part.value.split("\n");
+
+        lines.forEach(function(line) {
+          if (!line.trim()) return;
+
+          if (part.added) {
+            html += `<div class="diff-line added">+ ${escapeHtml(line)}</div>`;
+          } else if (part.removed) {
+            html += `<div class="diff-line removed">- ${escapeHtml(line)}</div>`;
+          } else {
+            html += `<div class="diff-line unchanged">  ${escapeHtml(line)}</div>`;
+          }
+        });
+      });
+
+      document.getElementById("site-change-patch").innerHTML = html;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var previousText = `{{ previous.content | strip_html | strip_newlines | escape }}`;
+      var newestText = `{{ newest.content | strip_html | strip_newlines | escape }}`;
+
+      renderDiff(previousText, newestText);
+    });
+  </script>
+
+{% else %}
+  <p>No recent changes available to generate a patch.</p>
+{% endif %}
