@@ -1,0 +1,21 @@
+source: "."
+template_extensions:
+  - md
+  - liquid
+include_drafts: false
+ignore:
+  - build
+  - serve
+destination: _site
+
+site:
+  title: Bring Back BYOD at MCCTC
+  description: A petition landing site for restoring a bring-your-own-device policy at MCCTC.
+  base_url: ~
+
+posts:
+  rss: rss.xml
+
+assets:
+  sass:
+    style: Nested
