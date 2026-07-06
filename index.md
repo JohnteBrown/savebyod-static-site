@@ -1,6 +1,6 @@
 ---
 layout: default.liquid
-title: Bring Back BYOD at MCCTC
+title: Help Us Save BYOD!!
 ---
 
 <section class="hero">
@@ -35,12 +35,6 @@ title: Bring Back BYOD at MCCTC
 </section>
 
 <section class="post-preview">
-  <h2>Recent updates</h2>
 
-  {% for post in collections.posts.pages %}
-    <article class="post-list-item">
-      <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
-      <p>{{ post.description }}</p>
-    </article>
-  {% endfor %}
+  {% include "jsdiff.liquid" %}
 </section>
