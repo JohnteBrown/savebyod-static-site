@@ -1,0 +1,27 @@
+[core]
+	editor = code --wait
+	autocrlf = true
+	excludesfile = ~/.gitignore_global
+	repositoryformatversion = 0
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
+
+[credential]
+	helper = manager-core
+
+[color]
+	ui = auto
+
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	lg = log --oneline --graph --decorate --all
+
+[core]
+	safecrlf = warn
