@@ -1,2 +1,0 @@
-#!/bin/nushell
-cobalt build
