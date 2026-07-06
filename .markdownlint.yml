@@ -1,0 +1,40 @@
+---
+# Markdownlint configuration for the mcctc-byod project
+
+# Use recommended defaults and then customize
+default: true
+
+# Line length
+MD013: false # disable strict line length to allow long URLs and tables
+
+# Headings
+MD001: { level: 1 }        # heading levels increment properly, start at level 1
+MD002: true                # first heading should be a top-level heading
+MD004: { style: "consistent" } # unordered list style consistency
+MD025: false               # allow multiple top-level headings within docs
+MD026: true                # trailing punctuation in heading
+
+# Lists and indentation
+MD007: { indent: 2 }       # unordered list indentation 2 spaces
+MD030: { list_item_bullet: "-", ol_multi: false } # consistent list markers (-)
+
+# Code blocks and fences
+MD040: { style: "fenced" } # use fenced code blocks
+MD042: true                # no empty links
+MD046: true                # code fence style (use fenced)
+
+# Whitespace
+MD009: true                # no trailing spaces
+MD010: true                # no hard tabs
+
+# Links and images
+MD041: false               # allow file names without a title in image references
+MD034: true                # no bare URLs
+
+# Files to ignore (relative to repo root)
+ignore: 
+	- README.md
+
+# Customize rule severity if desired (info, warning, error)
+# Example: MD029: { style: "ordered", severity: "warning" }
+
