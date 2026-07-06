@@ -27,6 +27,6 @@ permalink: /petition/
 </section>
 
 <div class="actions">
-  <a class="button primary" href="https://c.org/Rs8TD2PfqJ">Join the campaign!</a>
+  <a class="button primary" href="https://c.org/Rs8TD2PfqJ">Sign the petition</a>
   <a class="button secondary" href="/">Back to the homepage</a>
 </div>
