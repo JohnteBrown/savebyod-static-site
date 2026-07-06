@@ -34,7 +34,3 @@ MD034: true                # no bare URLs
 # Files to ignore (relative to repo root)
 ignore: 
 	- README.md
-
-# Customize rule severity if desired (info, warning, error)
-# Example: MD029: { style: "ordered", severity: "warning" }
-
