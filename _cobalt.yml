@@ -12,7 +12,6 @@ ignore:
   - "netlify.toml"
   - ".pre-commit-config.yaml"
   - ".markdownlint.yml"
-  - "netlify"
   - ".gitignore"
   - ".gitconfig"
   - ".devcontainer"
