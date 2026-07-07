@@ -1,20 +1,38 @@
 async function updatePetitionWidget() {
-  const response = await fetch("/.netlify/functions/petition");
-  const data = await response.json();
+  const countEl = document.getElementById("signature-count");
+  const goalEl = document.getElementById("signature-goal");
+  const barEl = document.getElementById("progress-bar");
+  const statusEl = document.getElementById("petition-status");
 
-  document.querySelector("#signature-count").textContent =
-    data.signatures.toLocaleString();
+  try {
+    const response = await fetch("/.netlify/functions/petition");
+    const data = await response.json();
 
-  document.querySelector("#signature-goal").textContent =
-    data.goal.toLocaleString();
+    if (typeof data.goal === "number") {
+      goalEl.textContent = data.goal.toLocaleString();
+    }
 
-  const percentage = Math.min(
-    (data.signatures / data.goal) * 100,
-    100
-  );
+    if (typeof data.signatures === "number") {
+      countEl.textContent = data.signatures.toLocaleString();
 
-  document.querySelector("#progress-bar").style.width =
-    `${percentage}%`;
+      const percent = Math.min((data.signatures / data.goal) * 100, 100);
+      barEl.style.width = `${percent}%`;
+
+      if (statusEl) {
+        statusEl.textContent = `${percent.toFixed(1)}% funded by signatures`;
+      }
+    } else {
+      countEl.textContent = "—";
+      if (statusEl) {
+        statusEl.textContent = "Signature count unavailable right now";
+      }
+    }
+  } catch (err) {
+    countEl.textContent = "—";
+    if (statusEl) {
+      statusEl.textContent = "Widget temporarily unavailable";
+    }
+  }
 }
 
 updatePetitionWidget();
