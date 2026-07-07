@@ -35,6 +35,5 @@ title: Help Us Save BYOD!!
 </section>
 
 <section class="post-preview">
-
   {% include "jsdiff.liquid" %}
 </section>
