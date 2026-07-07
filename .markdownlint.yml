@@ -1,36 +1,49 @@
 ---
 # Markdownlint configuration for the mcctc-byod project
+# Tailored for Markdown files using inline HTML
 
 # Use recommended defaults and then customize
 default: true
 
 # Line length
-MD013: false # disable strict line length to allow long URLs and tables
+MD013: false # allow long URLs, tables, HTML attributes, etc.
 
 # Headings
-MD001: { level: 1 }        # heading levels increment properly, start at level 1
-MD002: true                # first heading should be a top-level heading
-MD004: { style: "consistent" } # unordered list style consistency
-MD025: false               # allow multiple top-level headings within docs
-MD026: true                # trailing punctuation in heading
+MD001: { level: 1 }        # heading levels increment properly
+MD002: true                # first heading should be top-level
+MD025: false               # allow multiple H1 headings where needed
+MD026: true                # no trailing punctuation in headings
+MD041: false               # allow documents without first-line H1
 
-# Lists and indentation
-MD007: { indent: 2 }       # unordered list indentation 2 spaces
-MD030: { list_item_bullet: "-", ol_multi: false } # consistent list markers (-)
+# Lists
+MD004: { style: "consistent" } # consistent unordered list style
+MD007: { indent: 2 }           # 2-space list indentation
+MD029: { style: "ordered" }    # consistent ordered list numbering
+MD030: { list_item_bullet: "-", ol_multi: false }
 
-# Code blocks and fences
-MD040: { style: "fenced" } # use fenced code blocks
+# Code blocks
+MD040: { style: "fenced" } # require fenced code blocks
 MD042: true                # no empty links
-MD046: true                # code fence style (use fenced)
+MD046: true                # consistent code fence style
 
-# Whitespace
-MD009: true                # no trailing spaces
-MD010: true                # no hard tabs
+# Inline HTML support
+MD033: false # allow inline HTML tags (<div>, <details>, <img>, etc.)
+MD036: false # allow emphasis used instead of headings
+MD037: false # allow spaces inside emphasis markers (common in HTML mixes)
+MD038: false # allow spaces inside code spans
+MD039: false # allow spaces inside link text
 
 # Links and images
-MD041: false               # allow file names without a title in image references
-MD034: true                # no bare URLs
+MD034: false # allow bare URLs (useful with HTML href/src attributes)
+MD045: false # allow images without alt text when HTML controls accessibility
+
+# Whitespace
+MD009: true # no trailing spaces
+MD010: true # no hard tabs
+
+# HTML-heavy Markdown often needs duplicate headings/sections
+MD024: false # allow duplicate headings
 
 # Files to ignore (relative to repo root)
-ignore: 
-	- README.md
+ignore:
+  - README.md
