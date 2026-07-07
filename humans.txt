@@ -1,0 +1,34 @@
+/* TEAM */
+
+                 
+Your title: John'te Brown
+
+                            
+Site: https://savebyod.netlify.app
+     
+Location: U.S, Ohio, Youngstown.
+                    
+						
+
+							
+/* THANKS */
+
+							
+Name: https://github.com/JohnteBrown
+
+                        
+
+                            
+/* SITE */
+
+                            
+Last update: 7/7/2026 
+
+                            
+Standards: HTML5, CSS3, Web Components
+
+                            
+Components: highlight.js, unpkg, jsdiff, font awesome
+
+                            
+Software: Cobalt SSG

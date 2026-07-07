@@ -14,6 +14,11 @@
       "name": "Petition",
       "url": "/petition/",
       "icon": "fa-solid fa-file-signature"
+    },
+    {
+      "name": "Humans.txt",
+      "url": "/humans.txt",
+      "icon": "fa-solid fa-user"
     }
   ]
 }

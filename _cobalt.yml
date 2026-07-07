@@ -8,6 +8,15 @@ ignore:
   - "serve"
   - "README.md"
   - "LICENSE"
+  - "deploy-prep.sh"
+  - "netlify.toml"
+  - ".pre-commit-config.yaml"
+  - ".markdownlint.yml"
+  - "netlify"
+  - ".gitignore"
+  - ".gitconfig"
+  - ".devcontainer"
+  - "LICENSE"
 destination: _site
 
 site:
