@@ -2,7 +2,7 @@ const PETITION_URL =
   process.env.CHANGE_ORG_URL ||
   "https://www.change.org/p/bring-back-personal-devices-to-youngstown-ohio-mcctc";
 
-const PETITION_GOAL = Number(process.env.PETITION_GOAL || 15000);
+const PETITION_GOAL = Number(process.env.PETITION_GOAL || 5);
 
 function parseSignatureCount(html) {
   const patterns = [
