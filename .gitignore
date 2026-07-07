@@ -1,2 +1,5 @@
 # Artifacts
 _site/
+
+# Local Netlify folder
+.netlify
