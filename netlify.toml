@@ -1,2 +1,7 @@
 [build]
-  functions = "netlify/functions"
+command = "cobalt build"
+publish = "_site"
+functions = "netlify/functions"
+
+[build.environment]
+RUST_VERSION = "stable"
