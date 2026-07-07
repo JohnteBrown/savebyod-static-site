@@ -5,7 +5,7 @@ async function updatePetitionWidget() {
   const statusEl = document.getElementById("petition-status");
 
   try {
-    const response = await fetch("/.netlify/functions/petition");
+    const response = await fetch("/netlify/functions/petition");
     const data = await response.json();
 
     if (typeof data.goal === "number") {
