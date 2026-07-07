@@ -6,13 +6,17 @@
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="../sass/styles.css">
+    <script src="/assets/js/petition-widget.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/default.min.css">
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
 
     <!-- and it's easy to individually load additional languages -->
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/languages/go.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <script>hljs.highlightAll();</script>
+    <script>
+      hljs.highlightAll();
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -38,8 +42,51 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>MCCTC students and families deserve a modern learning environment.</p>
+        <div class="footer-content">
+          <p>MCCTC students and families deserve a modern learning environment.</p>
+
+          <nav class="footer-links">
+            {% for link in site.data.json.footer.links %}
+              <a
+                href="{{ link.url }}"
+                target="_blank"
+                rel="noopener">
+                <i class="{{ link.icon }}"></i>
+                {{ link.name }}
+              </a>
+            {% endfor %}
+          </nav>
+        </div>
       </div>
     </footer>
+    <aside class="petition-widget">
+      <div class="petition-widget-header">
+        <i class="fa-solid fa-file-signature"></i>
+        <span>Petition Progress</span>
+      </div>
+
+      <div class="petition-count">
+        <strong id="signature-count">Loading...</strong>
+        <span>
+          signatures</span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <p class="petition-goal">
+        Current Goal:
+        <span id="signature-goal">5</span>
+      </p>
+
+      <a
+        class="button primary"
+        href="https://c.org/Rs8TD2PfqJ"
+        target="_blank"
+        rel="noopener">
+        Sign Petition
+      </a>
+    </aside>
   </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "name": "Source",
+      "url": "https://github.com/JohnteBrown/savebyod-static-site",
+      "icon": "fa-brands fa-github"
+    },
+    {
+      "name": "About",
+      "url": "/about/",
+      "icon": "fa-solid fa-circle-info"
+    },
+    {
+      "name": "Petition",
+      "url": "/petition/",
+      "icon": "fa-solid fa-file-signature"
+    }
+  ]
+}

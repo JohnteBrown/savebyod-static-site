@@ -16,6 +16,10 @@ $border: #e5e7eb;
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   font-family: Arial, Helvetica, sans-serif;
   background: $bg;
   color: $text;
@@ -27,8 +31,7 @@ body {
   margin: 0 auto;
 }
 
-.site-header,
-.site-footer {
+.site-header {
   background: $surface;
   border-bottom: 1px solid $border;
 
@@ -37,6 +40,15 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+  }
+}
+
+.site-footer {
+  background: $surface;
+  border-top: 1px solid $border;
+
+  .container {
+    padding: 1.5rem 0;
   }
 }
 
@@ -58,6 +70,7 @@ body {
 }
 
 .page {
+  flex: 1;
   padding: 3rem 0 4rem;
 }
 
@@ -132,4 +145,116 @@ body {
   border: 1px solid $border;
   border-radius: 1rem;
   padding: 1.25rem;
+}
+.footer-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+
+    background: $bg;
+    border: 1px solid $border;
+
+    color: $text;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    transition: 0.2s ease;
+
+    i {
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      border-color: $accent;
+      color: $accent;
+      transform: translateY(-1px);
+    }
+  }
+}
+.fa-github {
+  color: #181717;
+}
+.fa-circle-info {
+  color: #2563eb;
+}
+.fa-file-signature {
+  color: #1de659;
+}
+.petition-widget {
+  position: fixed;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 260px;
+
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 1rem;
+
+  padding: 1.25rem;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  z-index: 100;
+
+  .petition-widget-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    color: $accent;
+  }
+
+  .petition-count {
+    margin-bottom: 0.75rem;
+
+    strong {
+      font-size: 1.5rem;
+    }
+  }
+
+  .progress {
+    height: 0.75rem;
+    background: $bg;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid $border;
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: $accent;
+      transition: width 0.5s ease;
+    }
+  }
+
+  .petition-goal {
+    color: $muted;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .petition-widget {
+    display: none;
+  }
 }
