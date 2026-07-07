@@ -24,7 +24,7 @@ async function updatePetitionWidget() {
         100
       );
 
-      barEl.style.width = `${percent}%`;
+      barEl.style.width = `${Math.max(percent, 1)}%`;
 
       if (statusEl) {
         statusEl.textContent = `${percent.toFixed(1)}% funded by signatures`;
