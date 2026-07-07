@@ -13,7 +13,7 @@ destination: _site
 site:
   title: Save BYOD Initiative (SBI)
   description: The official petition landing site for restoring a bring-your-own-device policy at MCCTC.
-  base_url: ~
+  base_url: https://savebyod.netlify.app
 
 posts:
   rss: rss.xml
