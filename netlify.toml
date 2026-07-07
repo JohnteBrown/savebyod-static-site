@@ -1,7 +1,7 @@
 [build]
 command = "bash deploy-prep.sh"
 publish = "_site"
-functions = "netlify/functions"
+functions = ".netlify/functions"
 
 [build.environment]
 RUST_VERSION = "stable"
