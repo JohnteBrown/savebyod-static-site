@@ -1,16 +1,8 @@
 [build]
-command = "cargo install cobalt-bin && cobalt build"
+command = "bash netlify-build.sh"
 publish = "_site"
 functions = "netlify/functions"
 
 [build.environment]
 RUST_VERSION = "stable"
 CARGO_HOME = "/opt/buildhome/.cargo"
-
-[functions]
-directory = "netlify/functions"
-
-[dev]
-command = "cobalt serve"
-publish = "_site"
-functions = "netlify/functions"
