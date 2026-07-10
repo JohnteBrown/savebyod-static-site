@@ -3,3 +3,6 @@ _site/
 
 # Local Netlify folder
 .netlify
+
+# OSX
+.DS_Store
