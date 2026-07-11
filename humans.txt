@@ -1,7 +1,7 @@
 /* TEAM */
 
                  
-Your title: John'te Brown
+Name: John'te Brown
 
                             
 Site: https://savebyod.netlify.app
@@ -11,10 +11,10 @@ Location: U.S, Ohio, Youngstown.
 						
 
 							
-/* THANKS */
+/* SUPPORT ME */
 
 							
-Name: https://github.com/JohnteBrown
+Github: https://github.com/JohnteBrown
 
                         
 
