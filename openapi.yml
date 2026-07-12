@@ -15,7 +15,7 @@ paths:
     get:
       summary: Get petition progress
       operationId: getPetitionProgress
-      description: Returns current petition signatures, goal, and completion percentage.
+      description: Returns current petition signatures, goal, completion percentage, and update time.
 
       responses:
         "200":
@@ -42,6 +42,7 @@ components:
         - signatures
         - goal
         - percent
+        - updatedAt
 
       properties:
         signatures:
@@ -59,19 +60,45 @@ components:
           description: Percentage of the goal reached.
           example: 12.5
 
+        updatedAt:
+          type: string
+          format: date-time
+          description: Time the petition data was retrieved.
+          example: "2026-07-12T15:30:00.000Z"
+
 
     PetitionError:
       type: object
+      required:
+        - goal
+        - percent
+        - updatedAt
+        - error
 
       properties:
         signatures:
-          type: nullable
+          type: integer
+          nullable: true
+          description: Signature count if available. Null if retrieval failed.
           example: null
 
         goal:
           type: integer
+          description: Current petition signature goal.
           example: 200
+
+        percent:
+          type: number
+          description: Percentage reached when the error occurred.
+          example: 0
+
+        updatedAt:
+          type: string
+          format: date-time
+          description: Time the request was processed.
+          example: "2026-07-12T15:30:00.000Z"
 
         error:
           type: string
-          example: "Could not extract signature count from page HTML."
+          description: Error message.
+          example: "Could not extract signature count from Change.org page."
