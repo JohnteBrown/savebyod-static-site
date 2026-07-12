@@ -1,0 +1,77 @@
+openapi: 3.0.3
+
+info:
+  title: MCCTC BYOD Petition API
+  description: >
+    API endpoint for retrieving current MCCTC BYOD petition signature progress.
+    Data is collected from the Change.org petition page.
+  version: 1.0.0
+
+servers:
+  - url: https://savebyod.netlify.app/.netlify/functions
+
+paths:
+  /petition:
+    get:
+      summary: Get petition progress
+      operationId: getPetitionProgress
+      description: Returns current petition signatures, goal, and completion percentage.
+
+      responses:
+        "200":
+          description: Successful petition status response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PetitionProgress"
+
+        "500":
+          description: Failed to retrieve petition data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PetitionError"
+
+
+components:
+  schemas:
+
+    PetitionProgress:
+      type: object
+      required:
+        - signatures
+        - goal
+        - percent
+
+      properties:
+        signatures:
+          type: integer
+          description: Current number of petition signatures.
+          example: 25
+
+        goal:
+          type: integer
+          description: Current petition signature goal.
+          example: 200
+
+        percent:
+          type: number
+          description: Percentage of the goal reached.
+          example: 12.5
+
+
+    PetitionError:
+      type: object
+
+      properties:
+        signatures:
+          type: nullable
+          example: null
+
+        goal:
+          type: integer
+          example: 200
+
+        error:
+          type: string
+          example: "Could not extract signature count from page HTML."
