@@ -5,7 +5,9 @@ _site/
 _docs/**
 
 # Local Netlify folder
-.netlify
+.netlify/*
+!.netlify/functions/
+!.netlify/functions/**
 
 # OSX
 .DS_Store
