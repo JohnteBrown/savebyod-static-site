@@ -1,0 +1,67 @@
+$change-widget: (
+  bg: #ffffff,
+  border: #d0d7de,
+  header-bg: #f6f8fa,
+  text-muted: #57606a,
+  added-bg: #e6ffec,
+  added-text: #1a7f37,
+  removed-bg: #ffebe9,
+  removed-text: #cf222e
+);
+
+.change-widget {
+  max-width: 900px;
+  width: 100%;
+  margin: 24px auto;
+
+  background: map-get($change-widget, bg);
+  border: 1px solid map-get($change-widget, border);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  h3 {
+    margin: 0;
+    padding: 14px 16px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    background: map-get($change-widget, header-bg);
+    border-bottom: 1px solid map-get($change-widget, border);
+  }
+
+  .patch {
+    max-height: 500px;
+    padding: 12px;
+
+    overflow: auto;
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+  }
+
+  .diff-line {
+    padding: 2px 6px;
+
+    border-radius: 4px;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .added {
+    background: map-get($change-widget, added-bg);
+    color: map-get($change-widget, added-text);
+  }
+
+  .removed {
+    background: map-get($change-widget, removed-bg);
+    color: map-get($change-widget, removed-text);
+  }
+
+  .unchanged {
+    color: map-get($change-widget, text-muted);
+  }
+}
