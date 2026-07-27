@@ -1,6 +1,9 @@
 # Artifacts
 _site/
 
+# Info for devs
+_docs/**
+
 # Local Netlify folder
 .netlify
 
