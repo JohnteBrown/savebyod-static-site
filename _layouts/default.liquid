@@ -133,35 +133,6 @@
         </div>
       </div>
     </footer>
-    <aside class="petition-widget">
-      <div class="petition-widget-header">
-        <i class="fa-solid fa-file-signature"></i>
-        <span>Petition Progress</span>
-      </div>
-
-      <div class="petition-count">
-        <strong id="signature-count">Loading...</strong>
-        <span>
-          signatures</span>
-      </div>
-
-      <div class="progress">
-        <div class="progress-bar" id="progress-bar"></div>
-      </div>
-
-      <p class="petition-goal">
-        Current Goal:
-        <span id="signature-goal">100</span>
-      </p>
-
-      <a
-        class="button primary"
-        href="https://c.org/Rs8TD2PfqJ"
-        target="_blank"
-        rel="noopener">
-        Sign Petition
-      </a>
-    </aside>
-    <script src="/assets/js/petition-widget.js"></script>
+   {% include "petition-widget.liquid" %}
   </body>
 </html>
