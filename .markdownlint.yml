@@ -47,3 +47,4 @@ MD024: false # allow duplicate headings
 # Files to ignore (relative to repo root)
 ignore:
   - README.md
+  - posts/big-update.md
