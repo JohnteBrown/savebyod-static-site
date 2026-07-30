@@ -1,0 +1,77 @@
+$bg: #f7f8fc;
+$surface: #ffffff;
+$text: #1f2937;
+$muted: #6b7280;
+$accent: #2563eb;
+$accent-dark: #1d4ed8;
+$border: #e5e7eb;
+
+.petition-widget {
+  position: fixed;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 260px;
+
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 1rem;
+
+  padding: 1.25rem;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  z-index: 100;
+
+  .petition-widget-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    color: $accent;
+  }
+
+  .petition-count {
+    margin-bottom: 0.75rem;
+
+    strong {
+      font-size: 1.5rem;
+    }
+  }
+
+  .progress {
+    height: 0.75rem;
+    background: $bg;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid $border;
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: $accent;
+      transition: width 0.5s ease;
+    }
+  }
+
+  .petition-goal {
+    color: $muted;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .petition-widget {
+    display: none;
+  }
+}
