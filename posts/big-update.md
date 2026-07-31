@@ -16,7 +16,7 @@ is_draft: false
     </style>
   </template>
   <script type="text/markdown">
-# Project Update: Infrastructure Stabilization & Campaign Launch
+# Project Update: Infrastructure Improvement & Campaign Launch
 
 *Published: {{ page.published_date | date: "%B %e, %Y" }}*
 
@@ -30,7 +30,7 @@ The good news is that these deployment-related bugs have now been identified and
 
 With the infrastructure stabilized, we'll be able to focus our efforts on what matters most: improving the campaign, increasing visibility, and keeping supporters informed.
 
-## 📣 Social Media Campaign Has Begun
+## 📣 Our Social Media Campaign Has Begun
 
 We're also excited to announce that our social media outreach campaign is officially underway.
 
